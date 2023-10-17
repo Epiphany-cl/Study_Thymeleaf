@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+</head>
+<body>
+<h2>展示 User 用户信息：</h2>
+用户编号：<span th:text="${user.id}"></span><br/>
+用户姓名：<span th:text="${user.name}"></span><br/>
+用户手机号：<span th:text="${user.phone}"></span><br/>
+用户地址：<span th:text="${user.address}"></span><br/>
+用户生日：<span th:text="${#dates.format(user.birthday,'yyyy-MM-dd')}"></span><br/>
+<hr/>
+<button th:onclick="show([[${user.id}]])">show</button>
+</body>
+</html>
+<script>
+    function show(i) {
+        alert(i)
+    }
+</script>

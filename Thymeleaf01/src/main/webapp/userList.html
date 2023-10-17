@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>userList</title>
+</head>
+<body>
+<h1>th:each 循环遍历 List 集合</h1>
+<div style="color: red"> 1.user:当前对象的变量名<br/>
+    2.userStat:当前对象的状态变量名<br/>
+    3.${userList}:循环遍历的集合<br/> 4.变量名自定义
+</div>
+<div th:each="user,userStat:${list}" th:style="'background-color:'+@{(${userStat.odd}?'red':'blue')}">
+    <span th:text="${userStat.index}"></span>
+    <span th:text="${user.id}"></span>
+    <span th:text="${user.name}"></span>
+    <span th:text="${user.phone}"></span>
+    <span th:text="${user.address}"></span>
+    <span th:text="${#dates.format(user.birthday,'yyyy-MM-dd HH:mm:ss')}"></span>
+</div>
+</body>
+</html>

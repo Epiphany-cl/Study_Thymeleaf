@@ -30,13 +30,14 @@
                         <property name="suffix" value=".html"/>
                         <property name="templateMode" value="HTML5"/>
                         <property name="characterEncoding" value="UTF-8" />
+                        <property name="cacheable" value="false"/>
                     </bean>
                 </property>
             </bean>
         </property>
     </bean>
 
-    <!--<mvc:view-controller path="/" view-name="index"/>-->
+    <mvc:view-controller path="/" view-name="index"/>
 
     <!--静态资源-->
     <mvc:default-servlet-handler/>
